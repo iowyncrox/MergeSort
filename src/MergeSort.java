@@ -8,17 +8,17 @@ public class MergeSort {
 		System.out.println(Arrays.toString(intArray));
 	}
 
-	private static void mergeSort(Comparable[] a, Comparable[] temp, int start,
-			int end) {
+	private static void mergeSort(Comparable[] array, Comparable[] temp,
+			int start, int end) {
 		if (start < end) {
 			int mid = (start + end) / 2;
-			mergeSort(a, temp, start, mid);
-			mergeSort(a, temp, mid + 1, end);
-			merge(a, temp, start, mid + 1, end);
+			mergeSort(array, temp, start, mid);
+			mergeSort(array, temp, mid + 1, end);
+			merge(array, temp, start, mid + 1, end);
 		}
 	}
 
-	private static void merge(Comparable[] a, Comparable[] temp, int left,
+	private static void merge(Comparable[] array, Comparable[] temp, int left,
 			int right, int rightEnd) {
 
 		int k = left;
@@ -26,23 +26,23 @@ public class MergeSort {
 		int num = rightEnd - left + 1;
 
 		while (left <= leftEnd && right <= rightEnd) {
-			if (a[left].compareTo(a[right]) <= 0) {
-				temp[k++] = a[left++];
+			if (array[left].compareTo(array[right]) <= 0) {
+				temp[k++] = array[left++];
 			} else {
-				temp[k++] = a[right++];
+				temp[k++] = array[right++];
 			}
 		}
 
 		while (left <= leftEnd) {
-			temp[k++] = a[left++];
+			temp[k++] = array[left++];
 		}
 
 		while (right <= rightEnd) {
-			temp[k++] = a[right++];
+			temp[k++] = array[right++];
 		}
 
 		for (int i = 0; i < num; i++, rightEnd--) {
-			a[rightEnd] = temp[rightEnd];
+			array[rightEnd] = temp[rightEnd];
 		}
 	}
 
