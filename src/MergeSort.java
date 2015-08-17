@@ -26,7 +26,7 @@ public class MergeSort {
 		int num = rightEnd - left + 1;
 
 		while (left <= leftEnd && right <= rightEnd) {
-			if (array[left].compareTo(array[right]) <= 0) {
+			if (compare(array[left], array[right])) {
 				temp[k++] = array[left++];
 			} else {
 				temp[k++] = array[right++];
@@ -44,6 +44,10 @@ public class MergeSort {
 		for (int i = 0; i < num; i++, rightEnd--) {
 			array[rightEnd] = temp[rightEnd];
 		}
+	}
+
+	public static boolean compare(Comparable i, Comparable j) {
+		return i.compareTo(j) <= 0;
 	}
 
 	public static void main(String[] args) {
