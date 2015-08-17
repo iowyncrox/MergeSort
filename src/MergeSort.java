@@ -2,10 +2,10 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-	public static void mergeSort(Integer[] intArray) {
-		Comparable[] temp = new Comparable[intArray.length];
-		mergeSort(intArray, temp, 0, intArray.length - 1);
-		System.out.println(Arrays.toString(intArray));
+	public static void mergeSort(Comparable[] array) {
+		Comparable[] temp = new Comparable[array.length];
+		mergeSort(array, temp, 0, array.length - 1);
+		System.out.println(Arrays.toString(array));
 	}
 
 	private static void mergeSort(Comparable[] array, Comparable[] temp,
