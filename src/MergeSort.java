@@ -5,7 +5,6 @@ public class MergeSort {
 	public static void mergeSort(Comparable[] array) {
 		Comparable[] temp = new Comparable[array.length];
 		mergeSort(array, temp, 0, array.length - 1);
-		System.out.println(Arrays.toString(array));
 	}
 
 	private static void mergeSort(Comparable[] array, Comparable[] temp,
@@ -53,5 +52,6 @@ public class MergeSort {
 	public static void main(String[] args) {
 		Integer[] a = { 4, 8, 1, 7, 6, 5, 3, 2, 0 };
 		MergeSort.mergeSort(a);
+		System.out.println(Arrays.toString(a));
 	}
 }
