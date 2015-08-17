@@ -1,18 +1,17 @@
 import java.util.Arrays;
 
 public class MergeSort {
-
 	public static void mergeSort(Comparable[] array) {
 		Comparable[] temp = new Comparable[array.length];
-		mergeSort(array, temp, 0, array.length - 1);
+		sort(array, temp, 0, array.length - 1);
 	}
 
-	private static void mergeSort(Comparable[] array, Comparable[] temp,
-			int start, int end) {
+	private static void sort(Comparable[] array, Comparable[] temp, int start,
+			int end) {
 		if (start < end) {
 			int mid = (start + end) / 2;
-			mergeSort(array, temp, start, mid);
-			mergeSort(array, temp, mid + 1, end);
+			sort(array, temp, start, mid);
+			sort(array, temp, mid + 1, end);
 			merge(array, temp, start, mid + 1, end);
 		}
 	}
@@ -43,6 +42,7 @@ public class MergeSort {
 		for (int i = 0; i < num; i++, rightEnd--) {
 			array[rightEnd] = temp[rightEnd];
 		}
+
 	}
 
 	private static boolean compare(Comparable i, Comparable j) {
