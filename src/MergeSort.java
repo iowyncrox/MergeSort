@@ -46,7 +46,7 @@ public class MergeSort {
 		}
 	}
 
-	public static boolean compare(Comparable i, Comparable j) {
+	private static boolean compare(Comparable i, Comparable j) {
 		return i.compareTo(j) <= 0;
 	}
 
