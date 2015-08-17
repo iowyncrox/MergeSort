@@ -46,7 +46,7 @@ public class MergeSort {
 	}
 
 	private static boolean compare(Comparable i, Comparable j) {
-		return i.compareTo(j) <= 0;
+		return i.compareTo(j) < 0;
 	}
 
 	public static void main(String[] args) {
